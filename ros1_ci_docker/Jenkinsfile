@@ -37,7 +37,7 @@ pipeline {
         stage('Done') {
             steps {
                 sh '''
-                echo "Docker build and run Pipeline job completed"
+                echo "Docker build and run Pipeline job completed !"
                 '''
             }
         }
