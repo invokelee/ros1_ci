@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py" name="wp_action_server" />
+  <node pkg="tortoisebot_waypoints" type="g1_action_send.py" name="target_g1_request_node" />
+  <!-- <test test-name="target_g1_xy_move_integration_test" pkg="tortoisebot_waypoints" type="g1_target_position_test.py" /> -->
+
+  <!-- <node pkg="tortoisebot_waypoints" type="g0_action_send.py" name="target_g0_request_node" />
+  <test test-name="target_g0_xy_move_integration_test" pkg="tortoisebot_waypoints" type="g0_target_position_test.py" /> -->
+</launch>

@@ -1,0 +1,27 @@
+services:
+  tortoisebot-ros1-wp-test:
+    image: invokelee/ros1-wp-test:1.0
+    # build:
+    #   context: ..
+    #   dockerfile: ./catkin_ws/src/ros1_ci_docker/Dockerfile
+    hostname: ros1_ci
+    environment:    
+      - DISPLAY=${DISPLAY}
+      - ROS_MASTER_URI=http://ros1_ci:11311
+      - ROS_HOSTNAME=ros1_ci
+    command:
+      - /ros1_ci/entrypoint.sh
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./entrypoint.sh:/ros1_ci/entrypoint.sh
+      - gazebo-static:/ros1_ci/static/
+    networks:
+      - ros1_sim_net
+    ports:
+      - "11311:11311"
+
+volumes:
+  gazebo-static:
+
+networks:
+  ros1_sim_net:
