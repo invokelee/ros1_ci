@@ -13,7 +13,8 @@ pipeline {
             steps {
                 sh '''
                 cd ~/catkin_ws/src/ros1_ci_docker
-                // sudo docker build -f Dockerfile -t invokelee/ros1-wp-test:1.0 --push /home/user
+                /* sudo docker build -f Dockerfile -t invokelee/ros1-wp-test:1.0 --push /home/user
+                */
                 sudo docker build -f Dockerfile -t invokelee/ros1-wp-test:1.0 /home/user
                 '''
             }
